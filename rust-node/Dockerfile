@@ -32,7 +32,7 @@ ENV LANG=C.UTF-8
 
 # Install rust
 # https://github.com/rust-lang/rustup/issues/1085
-ENV RUSTUP_HOME=/opt/rust
+ENV RUSTUP_HOME=/opt/rust \
     CARGO_HOME=/opt/rust
 RUN RUSTUP_URL="https://sh.rustup.rs" \
   && curl --silent --show-error --location --fail --retry 3 --proto '=https' --tlsv1.2 --output /tmp/rustup-linux-install.sh $RUSTUP_URL \
@@ -46,8 +46,7 @@ RUN groupadd --gid 3434 vibbioinfocore \
 
 # IMAGE CUSTOMISATIONS
 
-RUN /opt/rust/rustup component add rustfmt
-RUN /opt/rust/rustup target add x86_64-pc-windows-msvc
+RUN /opt/rust/bin/rustup target add x86_64-pc-windows-msvc
 
 USER vibbioinfocore
 ENV PATH /opt/rust/bin:${PATH}
