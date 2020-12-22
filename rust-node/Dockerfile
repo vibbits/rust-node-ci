@@ -50,6 +50,7 @@ RUN /opt/rust/bin/rustup target add x86_64-pc-windows-msvc
 
 USER vibbioinfocore
 RUN mkdir "${HOME}/.npm" \
+    && mkdir "${HOME}/.npm/lib" \
     && npm config set prefix "${HOME}/.npm"
 ENV PATH /opt/rust/bin:${HOME}/.npm:${PATH}
 ENV MANPATH ${MANPATH}:${HOME}/.npm/share/man
