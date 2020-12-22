@@ -20,7 +20,7 @@ RUN apt-get update \
   && apt-get install -y \
     git mercurial xvfb apt \
     locales sudo openssh-client ca-certificates tar gzip parallel \
-    net-tools netcat unzip zip bzip2 gnupg curl wget make
+    net-tools netcat unzip zip bzip2 gnupg curl wget make man
 
 
 # Set timezone to UTC by default
@@ -49,6 +49,9 @@ RUN groupadd --gid 3434 vibbioinfocore \
 RUN /opt/rust/bin/rustup target add x86_64-pc-windows-msvc
 
 USER vibbioinfocore
-ENV PATH /opt/rust/bin:${PATH}
+RUN mkdir "${HOME}/.npm" \
+    npm config set prefix "${HOME}/.npm"
+ENV PATH /opt/rust/bin:${HOME}/.npm:${PATH}
+ENV MANPATH ${MANPATH}:${HOME}/.npm/share/man
 
 CMD ["/bin/sh"]
