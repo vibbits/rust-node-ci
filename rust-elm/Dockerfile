@@ -8,3 +8,6 @@ FROM vibbioinfocore/rust-node-ci:latest
 
 # Install elm, elm-format, elm-test, etc
 RUN npm install -g elm elm-format elm-test elm-verify-examples
+
+# Default: Print rust, node, elm versions
+CMD rustc --version && echo -n "Node:"; node --version && echo -n "Elm: "; elm --version

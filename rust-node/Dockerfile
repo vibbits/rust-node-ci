@@ -51,6 +51,6 @@ RUN RUSTUP_URL="https://sh.rustup.rs" \
 
 RUN /home/vibbioinfocore/.cargo/bin/rustup target add x86_64-pc-windows-msvc
 
-ENV PATH /home/vibbioinfocore/.npm/bin:${PATH}
+ENV PATH /home/vibbioinfocore/.npm/bin:/home/vibbioinfocore/.cargo/bin:${PATH}
 
-CMD ["/bin/sh"]
+CMD rustc --version && echo -n "Node:"; node --version
