@@ -6,8 +6,8 @@ Extends the base [Rust/Node](https://hub.docker.com/repository/docker/vibbioinfo
 combined Elm and Rust projects.
 
 ## Versions
-- Node 16.3.0
-- Rust 1.53.0
+- Node 16.12.0
+- Rust 1.56.0
 - Elm 0.19.1
 
 ## Rust Toolchains

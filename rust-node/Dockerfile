@@ -4,7 +4,7 @@
 ## top of this image.
 ##
 
-FROM node:16.3.0-buster
+FROM node:16.12.0-buster
 
 # make Apt non-interactive
 RUN echo 'APT::Get::Assume-Yes "true";' > /etc/apt/apt.conf.d/90vibbioinfocore \

@@ -6,8 +6,8 @@ Extends the official [Node](https://hub.docker.com/_/node) image for use with
 combined Node and Rust projects.
 
 ## Versions
-- Node 16.3.0
-- Rust 1.53.0
+- Node 16.12.0
+- Rust 1.56.0
 
 ## Rust Toolchains
 - x86_64-unknown-linux-gnu
